@@ -9,7 +9,7 @@ var config = {
   //
   development: {
     server: {
-      port: 3001,
+      port: 9898,
       hostname: 'localhost',
     },
     database: {

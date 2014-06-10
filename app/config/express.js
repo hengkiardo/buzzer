@@ -7,7 +7,7 @@ var compression = require('compression');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var csrf = require('lusca').csrf();
+// var csrf = require('lusca').csrf();
 var MongoStore = require('connect-mongo')({ session: session });
 var errorHandler = require('errorhandler');
 var expressValidator = require('express-validator');
@@ -58,9 +58,9 @@ module.exports = function (app, express, passport) {
   }));
   app.use(flash());
 
-  app.use(function(req, res, next) {
-    csrf(req, res, next);
-  });
+  // app.use(function(req, res, next) {
+  //   csrf(req, res, next);
+  // });
 
   app.use(function (req, res, next) {
     res.locals.pkg      = pkg;
