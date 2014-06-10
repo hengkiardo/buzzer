@@ -1,0 +1,60 @@
+{
+  "name": "buzzer",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "express",
+    "expressJS",
+    "express4",
+    "expressJS4"
+  ],
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha"
+  },
+  "author": "Hengkiardo <hengki.sihombing@gmail.com> (https://github.com/aredo)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aredo/buzzer.git"
+  },
+  "dependencies": {
+    "jade": "^1.3.1",
+    "express": "^4.4.2",
+    "express-session": "^1.2.1",
+    "express-flash": "0.0.2",
+    "response-time": "^2.0.0",
+    "morgan": "^1.1.1",
+    "body-parser": "^1.3.0",
+    "cookie-parser": "latest",
+    "compression": "^1.0.6",
+    "serve-favicon": "^2.0.1",
+    "method-override": "^2.0.2",
+    "statuses": "^1.0.3",
+    "errorhandler": "^1.0.2",
+    "multer": "0.1.0",
+    "multipart": "^0.1.5",
+    "mongoose": "^3.8.9",
+    "connect-mongo": "^0.4.1",
+    "mongoose-slug": "^1.3.0",
+    "express-validator": "^2.3.0",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.2",
+    "passport-facebook": "^1.0.3",
+    "passport-linkedin-oauth2": "^1.1.1",
+    "fbgraph": "^0.2.10",
+    "twit": "^1.1.15",
+    "node-linkedin": "^0.2.0",
+    "view-helpers": "^0.1.4",
+    "async": "^0.9.0",
+    "lodash": "^2.4.1",
+    "utility": "^0.1.13",
+    "request": "^2.36.0",
+    "validator": "^3.14.1",
+    "moment": "^2.6.0",
+    "cheerio": "^0.16.0",
+    "email-templates": "^1.0.0",
+    "nodemailer": "^0.6.5"
+  }
+}
