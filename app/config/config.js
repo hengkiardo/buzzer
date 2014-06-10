@@ -15,7 +15,8 @@ var config = {
     database: {
       url: 'mongodb://localhost/findbuzzer_dev'
     },
-    BaseApiURL : 'http://localhost:3001/api/',
+    BaseApiURL : 'http://api.findbuzzer.local:9696',
+    cdn_assets : 'http://cdn.findbuzzer.local:8080',
     root     : rootPath,
     app      : {
       name : 'FindBuzzer'
@@ -50,7 +51,8 @@ var config = {
     database: {
       url: 'mongodb://localhost/findbuzzer'
     },
-    BaseApiURL : 'http://localhost:3001/api/',
+    BaseApiURL : 'http://api.findbuzzer.local:9696/',
+    cdn_assets : 'http://cdn.findbuzzer.local:8080/',
     root     : rootPath,
     app      : {
       name : 'FindBuzzer'
