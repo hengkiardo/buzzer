@@ -9,3 +9,31 @@ div.navbar.navbar-default.navbar-fixed-top(role='navigation')
       a.navbar-brand(href='/')
         img(src=config.cdn_assets + "/img/apps.png" width="50", height="50")
         span Buzz Buzz
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        - if (req.isAuthenticated())
+          li.dropdown
+            a(href="#" class="dropdown-toggle" data-toggle="dropdown")
+              span.thumb-sm.avatar.pull-left
+                if User.photo_profile
+                  img(src=User.photo_profile, height=30, width=30)
+                else
+                  img(src="#{User.gravatar()}", height=30, width=30)
+              | #{req.user.username} &nbsp;
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href="/#{req.user.username}", title="Profile") Profile
+              li
+                a(href="/logout", title="logout") Logout
+        - else
+          li
+            a.btn.btn-md.btn-twitter(href="/auth/twitter")
+              i.fa.fa-fw.fa-twitter
+              | &nbsp; Sign in with Twitter
+          li
+            a.btn.btn-md.btn-facebook(href="/auth/facebook")
+              i.fa.fa-fw.fa-facebook
+              | &nbsp; Sign in with Facebook
+

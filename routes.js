@@ -21,11 +21,16 @@ Route
   .get('/auth/twitter', passport.authenticate('twitter'))
   .get('/auth/twitter/callback',
     passport.authenticate('twitter',{
-    failureRedirect: '/login' }), function(req, res) {
+    failureRedirect: '/' }), function(req, res) {
     res.redirect(req.session.returnTo || '/')
   })
-  .get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }))
-  .get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
+  .get('/auth/facebook',
+    passport.authenticate('facebook',
+      { scope: ['email','publish_actions', 'user_location', 'user_friends', 'publish_stream', 'publish_actions']}
+  ))
+  .get('/auth/facebook/callback',
+    passport.authenticate('facebook',
+    { failureRedirect: '/' }), function(req, res) {
     res.redirect(req.session.returnTo || '/')
   })
   .get('/', function(req, res) {

@@ -30,8 +30,8 @@ var config = {
     },
     facebookAuth: true,
     facebook: {
-      clientID: process.env.FACEBOOK_ID || 'xxxxxxxxxxxxx',
-      clientSecret: process.env.FACEBOOK_SECRET || 'xxxxxxxxxxxxx',
+      clientID: process.env.FACEBOOK_ID || '130231167059298',
+      clientSecret: process.env.FACEBOOK_SECRET || '5075ceb6528af28382b2e10c48f46b71',
       callbackURL: '/auth/facebook/callback',
       passReqToCallback: true
     },

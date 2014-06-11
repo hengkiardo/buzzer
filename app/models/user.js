@@ -26,6 +26,28 @@ var UserSchema = new Schema({
   firstname: String,
   lastname: String,
   photo_profile: String,
+  bod: {
+    type: Date,
+  },
+  gender: {
+    type: String
+  },
+  city: {
+    type : Schema.ObjectId,
+    ref : 'City'
+  },
+  country: {
+    type : Schema.ObjectId,
+    ref : 'Country'
+  },
+  bio: {
+    type: String
+  },
+  interest: [
+    {
+      type: String
+    }
+  ],
   facebook: {},
   twitter: {},
   tokens: [],
@@ -40,8 +62,15 @@ var UserSchema = new Schema({
   salt: {
     type: String
   },
-  reset_password_token: String,
-  reset_password_expires: Date
+  reset_password_token: {
+    type: String
+  },
+  reset_password_expires: {
+    type: Date,
+  },
+  last_login: {
+    type: Date
+  }
 })
 
 UserSchema.plugin(CreateUpdatedAt)

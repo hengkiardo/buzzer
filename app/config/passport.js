@@ -111,16 +111,8 @@ passport.use(new FacebookStrategy(config.facebook, function(req, accessToken, re
         done(err);
       } else {
         User.findById(req.user.id, function(err, user) {
-          user.facebook      = profile;
-          user.username      = profile.username
-          user.provider      = 'facebook',
           user.facebook      = profile._json
-          user.firstname     = user.firstname || profile.first_name
-          user.lastname      = user.lastname || profile.last_name
-          user.photo_profile = user.photo_profile || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
-
           user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-
           user.save(function(err) {
             req.flash('info', { msg: 'Facebook account has been linked.' });
             done(err, user);
@@ -139,15 +131,15 @@ passport.use(new FacebookStrategy(config.facebook, function(req, accessToken, re
           done(err);
         } else {
           var user = new User();
-          user.email         = profile._json.email;
-          user.facebook      = profile;
-          user.username      = profile.username
-          user.provider      = 'facebook',
-          user.facebook      = profile._json
-          user.firstname     = user.firstname || profile.first_name
-          user.lastname      = user.lastname || profile.last_name
-          user.photo_profile = user.photo_profile || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
-
+          user.email     = profile._json.email;
+          user.username  = profile.username
+          user.provider  = 'facebook',
+          user.facebook  = profile._json
+          user.bio       = profile._json.bio
+          user.lastname  = profile._json.last_name
+          user.firstname = profile._json.first_name
+          user.gender    = profile.gender
+          user.photo_profile = user.photo_profile || 'https://graph.facebook.com/' + profile.id + '/picture?type=normal&width=500&height=500';
           user.tokens.push({ kind: 'facebook', accessToken: accessToken });
 
           user.save(function(err) {
