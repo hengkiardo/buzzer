@@ -3,21 +3,19 @@ html.app(lang='en')
 
   include ../includes/head
 
-  body
+  div#page
 
-    div#page
+    include ../includes/flash
 
-      include ../includes/flash
+    include ../includes/header
 
-      include ../includes/header
+    section.container
+      block main
 
-      section.container
-        block main
+      block content
 
-        block content
+      block form
 
-        block form
+  include ../includes/footer
 
-    include ../includes/footer
-
-    include ../includes/foot
+  include ../includes/foot

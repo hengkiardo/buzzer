@@ -1,9 +1,9 @@
 "use strict";
 
-var mongoose = require('mongoose');
-var User = mongoose.model('User');
-var async = require('async');
 var config = require('../config/config');
+var mongoose = require('mongoose');
+var User = require(config.root + '/app/models/user')
+var async = require('async');
 var utility = require('utility');
 var crypto = require('crypto');
 var errorHelper = require(config.root + '/app/helper/errors');

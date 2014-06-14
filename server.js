@@ -12,11 +12,14 @@ var app      = express()
 app.config = config
 
 // Database
-require(__dirname + '/app/config/database')(app, mongoose)
+require(__dirname + '/app/config/database')(config, mongoose)
 
 var models_path = __dirname + '/app/models'
+
 fs.readdirSync(models_path).forEach(function (file) {
-  if (~file.indexOf('.js')) require(models_path + '/' + file)
+  if (~file.indexOf('.js')) {
+    require(models_path + '/' + file)
+  }
 })
 
 require(__dirname + '/app/config/passport')

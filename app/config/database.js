@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function (app, mongoose) {
+module.exports = function (config, mongoose) {
 
   var connect = function () {
     var options = {
@@ -9,7 +9,7 @@ module.exports = function (app, mongoose) {
       },
       auto_reconnect:true
     }
-    mongoose.connect(app.config.database.url, options)
+    mongoose.connect(config.database.url, options)
   }
   connect()
 

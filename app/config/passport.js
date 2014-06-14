@@ -4,9 +4,10 @@ var mongoose = require('mongoose')
 var LocalStrategy = require('passport-local').Strategy
 var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
-var User = mongoose.model('User')
 var passport = require('passport')
-var config = require('./config');
+var config = require('./config')
+var User = require(config.root + '/app/models/user')
+// mongoose.model('User')
 
 // serialize sessions
 passport.serializeUser(function(user, done) {
