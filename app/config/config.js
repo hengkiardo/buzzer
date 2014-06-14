@@ -1,8 +1,9 @@
+"use strict";
 // config for the express app
 // depending on `process.env.NODE_ENV`, default is `development`
 
 var path = require('path')
-  , rootPath = path.normalize(__dirname + '/../..')
+var rootPath = path.normalize(__dirname + '/../..')
 
 var config = {
   // Development config
@@ -23,8 +24,8 @@ var config = {
     },
     twitterAuth: true,
     twitter: {
-      consumerKey: process.env.TWITTER_KEY || 'xxxxxxxxxxxxx',
-      consumerSecret: process.env.TWITTER_SECRET  || 'xxxxxxxxxxxxx',
+      consumerKey: process.env.TWITTER_KEY || 'NLzXYYbGv18jgNXTiAHhoNs0B',
+      consumerSecret: process.env.TWITTER_SECRET  || '05BAcEwSHWZ5sad7Iq1T3pkGn29TLIEwXMzDsQvvwifyW0O056',
       callbackURL: '/auth/twitter/callback',
       passReqToCallback: true
     },
@@ -51,16 +52,16 @@ var config = {
     database: {
       url: 'mongodb://localhost/findbuzzer'
     },
-    BaseApiURL : 'http://api.findbuzzer.local:9696/',
-    cdn_assets : 'http://cdn.findbuzzer.local:8080/',
+    BaseApiURL : 'http://api.findbuzzer.com',
+    cdn_assets : 'http://cdn.findbuzzer.com',
     root     : rootPath,
     app      : {
       name : 'FindBuzzer'
     },
     twitterAuth: true,
     twitter: {
-      consumerKey: process.env.TWITTER_KEY || 'xxxxxxxxxxxxx',
-      consumerSecret: process.env.TWITTER_SECRET  || 'xxxxxxxxxxxxx',
+      consumerKey: process.env.TWITTER_KEY || 'NLzXYYbGv18jgNXTiAHhoNs0B',
+      consumerSecret: process.env.TWITTER_SECRET  || '05BAcEwSHWZ5sad7Iq1T3pkGn29TLIEwXMzDsQvvwifyW0O056',
       callbackURL: '/auth/twitter/callback',
       passReqToCallback: true
     },

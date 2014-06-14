@@ -1,3 +1,5 @@
+"use strict";
+
 var mongoose = require('mongoose')
 var LocalStrategy = require('passport-local').Strategy
 var TwitterStrategy = require('passport-twitter').Strategy;
@@ -57,12 +59,7 @@ passport.use(new TwitterStrategy(config.twitter, function(req, accessToken, toke
         done(err)
       } else {
         User.findById(req.user.id, function(err, user) {
-
-          user.email         = profile.username + "@twitter.com"
-          user.provider      = 'twitter'
           user.twitter       = profile._json
-          user.photo_profile = profile._json.profile_image_url
-          user.username      = profile.username
           user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret })
 
           user.save(function(err) {
@@ -78,14 +75,18 @@ passport.use(new TwitterStrategy(config.twitter, function(req, accessToken, toke
       if (existingUser) return done(null, existingUser)
       var user = new User()
       // Twitter will not provide an email address.  Period.
-      // But a person’s twitter username is guaranteed to be unique
-      // so we can "fake" a twitter email address as follows:
-
       user.email         = profile.username + "@twitter.com"
       user.provider      = 'twitter'
       user.twitter       = profile._json
       user.photo_profile = profile._json.profile_image_url
       user.username      = profile.username
+      user.bio           = profile._json.description
+      user.photo_profile = profile._json.profile_image_url.replace('_normal', '')
+
+      var firstname_lastname = profile.displayName.split(" ");
+      user.firstname     = firstname_lastname[0];
+      user.lastname      = firstname_lastname[1] || profile.username;
+
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret })
 
       user.save(function(err) {

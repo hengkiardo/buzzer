@@ -1,4 +1,4 @@
-
+"use strict";
 /**
  * Module dependencies.
  */
@@ -70,6 +70,14 @@ var UserSchema = new Schema({
   },
   last_login: {
     type: Date
+  },
+  is_active : {
+    type: Boolean,
+    default: true
+  },
+  is_confirm : {
+    type: Boolean,
+    default: false
   }
 })
 

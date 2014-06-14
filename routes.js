@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express');
 var Route = express.Router();
 var config = require('./app/config/config');

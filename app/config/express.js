@@ -1,3 +1,5 @@
+"use strict";
+
 var logger = require('morgan')
 var path = require('path')
 var responseTime = require('response-time')
