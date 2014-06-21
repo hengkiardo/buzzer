@@ -3,21 +3,55 @@ html.app(lang='en')
 
   include ../includes/head
 
-  #page.snap-content
+  if (req.isAuthenticated())
 
-    include ../includes/flash
+    #page.snap-content
 
-    include ../includes/header
+      include ../includes/flash
 
-    section.container
-      block main
+      include ../includes/header
 
-      block content
+      section.container
+        block main
 
-      block form
+        block content
 
-    include ../includes/footer
+        block form
 
-  include ../includes/sidebar
+      .image-banner
+        .image-banner-src
 
-  include ../includes/foot
+      include ../includes/footer
+
+    include ../includes/sidebar
+
+    include ../includes/foot
+
+
+  else
+    .site-main.bg-dark.lter
+      .promo-bg
+      .promo-content
+
+        .p-t-lg.text-white
+          img.block.m-auto(src=config.cdn_assets + "/img/app.png" width="100", height="100")
+          h1.block.m-auto.text-center Buzzme
+
+        .m-b-lg
+
+        .col-lg-6.m-auto.pull-none.text-white
+          h2.promo-title.text-center Find what you love, Love what you do, Share what you love.
+          //- Together we can help Brands become the talk all over Social Media accounts
+
+          .m-t-lg
+
+          .pull-in.text-center.pull-none.p-l-xl
+            a.col-lg-5.btn.btn-md.btn-twitter(href="/auth/twitter")
+              i.fa.fa-fw.fa-twitter.m-l-lg
+              | &nbsp; Sign in with Twitter
+
+            a.col-lg-5.btn.btn-md.btn-facebook(href="/auth/facebook")
+              i.fa.fa-fw.fa-facebook.m-l-lg
+              | &nbsp; Sign in with Facebook
+
+
