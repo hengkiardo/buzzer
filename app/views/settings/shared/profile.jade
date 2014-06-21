@@ -1,0 +1,59 @@
+//- pre #{user_session}
+form#campain-info-proposal-dec.form-horizontal.col-lg-8.campaign-info(method='post', action='#', name='campaigninfo')
+  input#proposalId(type="hidden", name="proposalid", value="5371a7fb67b072c27a0ca653")
+
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Username :
+    .col-lg-5
+      input.form-control.campaign_name(type="text" name="username" value=user_session.username)
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Email :
+    .col-lg-5
+      input.form-control.campaign_name(type="text" name="email" value=user_session.email)
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Firstname :
+    .col-lg-5
+      input.form-control.campaign_name(type="text" name="firstname" value=user_session.firstname)
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Lastname :
+    .col-lg-5
+      input.form-control.campaign_name(type="text" name="lastname" value=user_session.lastname)
+
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Gender :
+    .col-lg-2
+      label.radio-inline.radio.i-checks
+        input(type='radio', name='gender', value='male')
+        i
+        | Male
+
+    .col-lg-2
+      label.radio-inline.radio.i-checks
+        input(type='radio', name='gender', value='female')
+        i
+        | Female
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Country :
+    .col-lg-8
+      select.chosen-select.form-control.list-advertiser(placeholder="Choose Country" name="country")
+        option(value='') Choose Country :
+        option(value='ID') Indonesia
+        option(value='MY') Malaysia
+        option(value='SG') Singapore
+
+  .form-group
+    label.col-lg-2.control-label.text-l-i Short Bio
+    .col-lg-8
+      textarea.form-control.bio(rows='6', placeholder='Ex : Social Media Celebrity, Accomplished Writer, Creativepreneur...', name="proposal_campaign_pitch") #{user_session.bio}
+
+  .form-group
+    .col-lg-10.text-right
+      input.btn.btn-s-lg.btn-dark(type="submit" name="submit" value="Save")
+
+.clearfix

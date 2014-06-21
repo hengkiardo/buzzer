@@ -20,6 +20,7 @@ Route
     failureRedirect: '/login',
     failureFlash: true
   }), userController.session)
+  .get('/settings/profile', userController.settingProfile)
   .get('/auth/twitter', passport.authenticate('twitter'))
   .get('/auth/twitter/callback',
     passport.authenticate('twitter',{

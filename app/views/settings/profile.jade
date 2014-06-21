@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block main
+  section.content-page
+    h2.padder Settings
+    div.col-lg-8
+      ul#tabSetting.nav.nav-tabs.nav-justified
+        li.active
+          a(href='#profile', data-toggle='tab') PROFILE
+        li
+          a(href='#networks', data-toggle='tab') NETWORKS
+        li
+          a(href='#campaign', data-toggle='tab') CAMPAIGN
+        li
+          a(href='#preference', data-toggle='tab') PREFERENCE
+
+    .clearfix
+
+    .panel-body
+      .tab-content
+        #profile.tab-pane.active
+
+          include shared/profile.jade
+
+        #networks.tab-pane NETWORKS
+        #campaign.tab-pane
+          p
+            | This information will be used to determine your eligibility for Gokkon Campagin. <br />Any campaign that you receive will be sent to the address provided.
+        #preference.tab-pane PREFERENCE

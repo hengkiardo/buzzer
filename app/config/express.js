@@ -66,8 +66,9 @@ module.exports = function (app, passport) {
     res.locals.NODE_ENV = env
     res.locals.moment   = require('moment')
     res.locals.config   = app.config
+
     if(_.isObject(req.user)) {
-      res.locals.User = req.user
+      res.locals.user_session = req.user
     }
     next()
   })

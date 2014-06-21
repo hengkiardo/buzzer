@@ -96,3 +96,13 @@ exports.create = function (req, res, next) {
     }
   })
 }
+
+
+exports.settingProfile = function (req, res, next) {
+  var user = req.user
+
+  res.render('settings/profile', {
+    title: 'Findbuzzer - Setting Profile',
+    user: user
+  })
+}
