@@ -10,23 +10,15 @@ div.navbar.navbar-fixed-top(role='navigation')
       span.text-dark.text-lg.font-bold buZZme
 
   .collapse.navbar-collapse
-    ul.nav.navbar-nav.navbar-right.m-n.hidden-xs.nav-user
+    ul.nav.navbar-nav.navbar-right.m-n.hidden-xs.nav-user.buzzer
       - if (req.isAuthenticated())
         li.dropdown
-          a(href="#" class="dropdown-toggle" data-toggle="dropdown")
+          a(href="/#{req.user.username}" class="dropdown-toggle" title="#{req.user.firstname} #{req.user.lastname}")
             span.thumb-sm.avatar.pull-left
               if user_session.photo_profile
-                img(src=user_session.photo_profile, height=30, width=30)
+                img(src=user_session.photo_profile, height=40, width=40)
               else
-                img(src="#{user_session.gravatar()}", height=30, width=30)
-            | #{req.user.username} &nbsp;
-            b.caret
-          ul.dropdown-menu.animated.fadeInUp
-            span.arrow.top
-            li
-              a(href="/settings/profile", title="Settings") Settings
-            li
-              a(href="/logout", title="logout") Logout
+                img(src="#{user_session.gravatar()}", height=40, width=40)
       - else
         li
           a.btn.btn-md.btn-twitter(href="/auth/twitter")
