@@ -20,6 +20,7 @@ html.app(lang='en')
 
       .image-banner
         .image-banner-src
+        .overlay-banner
 
       include ../includes/footer
 
@@ -29,29 +30,48 @@ html.app(lang='en')
 
 
   else
-    .site-main.bg-dark.lter
-      .promo-bg
-      .promo-content
+    .site-main.bg-black
+      .promo
+        .promo-content
+          .promo-bg.u-fill
 
-        .p-t-lg.text-white
-          img.block.m-auto(src=config.cdn_assets + "/img/app.png" width="100", height="100")
-          h1.block.m-auto.text-center Buzzme
+            .u-fill.promo-inner.text-white
 
-        .m-b-lg
+              .promo-fill
 
-        .col-lg-6.m-auto.pull-none.text-white
-          h2.promo-title.text-center Find what you love, Love what you do, Share what you love.
-          //- Together we can help Brands become the talk all over Social Media accounts
+                img.m-t-lg.block.m-auto(src=config.cdn_assets + "/img/app.png" width="100", height="100")
+                h1.block.m-auto.text-center Buzzme
 
-          .m-t-lg
+                .m-b-xl
 
-          .pull-in.text-center.pull-none.p-l-xl
-            a.col-lg-5.btn.btn-md.btn-twitter(href="/auth/twitter")
-              i.fa.fa-fw.fa-twitter.m-l-lg
-              | &nbsp; Sign in with Twitter
+                .col-lg-8.m-auto.pull-none.text-white.p-b-lg.p-t-lg
+                  h2.promo-title.text-center
+                    strong Find&nbsp;
+                    | what you love,&nbsp;
+                    strong Love&nbsp;
+                    | what you do,&nbsp;
+                    br
+                    strong Share&nbsp;
+                    what you love.
 
-            a.col-lg-5.btn.btn-md.btn-facebook(href="/auth/facebook")
-              i.fa.fa-fw.fa-facebook.m-l-lg
-              | &nbsp; Sign in with Facebook
+                .m-b-lg
+                  //- Together we can help Brands become the talk all over Social Media accounts
+
+                .clearfix.p-b-lg
+
+                .m-t-lg.col-sm-6.p-t-xl.m-auto.text-center.pull-none.p-l-xl
+
+                  a.text-xl.m-l-sm.btn.btn-lg.btn-twitter(href="/auth/twitter")
+                    i.fa.fa-fw.fa-twitter.m-l-sm
+                    | &nbsp; Sign in with Twitter
+
+                  a.text-xl.btn.btn-md.btn-facebook(href="/auth/facebook")
+                    i.fa.fa-fw.fa-facebook.m-l-sm
+                    | &nbsp; Sign in with Facebook
+                  .clearfix
+
+                .clearfix
+
+            .u-fill.overlay
 
 
