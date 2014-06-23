@@ -16,14 +16,17 @@ block main
 
     .clearfix
 
-    .panel-body
+    .panel-body#tabSettingContent
       .tab-content
-        #profile.tab-pane.active
+        #profile.tab-pane.profile-setting.active
 
           include shared/profile.jade
 
-        #networks.tab-pane NETWORKS
-        #campaign.tab-pane
+        #networks.tab-pane.networks-profile-setting
+
+          include shared/networks.jade
+
+        #campaign.tab-pane.profile-setting
           p
             | This information will be used to determine your eligibility for Gokkon Campagin. <br />Any campaign that you receive will be sent to the address provided.
         #preference.tab-pane PREFERENCE

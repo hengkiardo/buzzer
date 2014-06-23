@@ -5,6 +5,8 @@ html.app(lang='en')
 
   if (req.isAuthenticated())
 
+    include ../includes/sidebar
+
     #page.snap-content
 
       include ../includes/flash
@@ -18,13 +20,12 @@ html.app(lang='en')
 
         block form
 
-      .image-banner
-        .image-banner-src
-        .overlay-banner
+      //- .image-banner
+      //-   .image-banner-src
+      //-   .overlay-banner
 
       include ../includes/footer
 
-    include ../includes/sidebar
 
     include ../includes/foot
 

@@ -1,8 +1,28 @@
-aside.snap-drawers
-  #sidebar.snap-drawer.snap-drawer-left
-    //- div
-    //-   //- a#brandLogo.navbar-brand(href='/')
-    //-   //-   img.m-r-xs(src=config.cdn_assets + "/img/app.png" width="30", height="30")
-    //-   //- .clearfix
-    nav
-      img(src=config.cdn_assets + "/img/sidebar-dummy.png")
+nav.snap-drawers
+  #sidebar.snap-drawer.snap-drawer-left.bg-dark.dker
+    ul.site-nav-list
+      li.site-nav-list-item.navigable-list-item.site-nav-list-item-home
+        a.site-nav-list-btn(title='Go home', href='/', tabindex='-1')
+          span.fa.home
+            img.m-r-xs(src=config.cdn_assets + "/img/app.png" width="30", height="30")
+          | Home
+
+        a.site-nav-list-btn-secondary(title='Search Medium', href='/search', tabindex='-1')
+          span.fa.fa-search
+
+      li.site-nav-list-item.navigable-list-item.active
+        a.site-nav-list-btn(title='View your profile', href='/#{req.user.username}', tabindex='-1')
+          span.avatar.avatar-micro
+            img.avatar-image.avatar-image-micro(src=user_session.photo_profile, title='#{req.user.firstname} #{req.user.lastname}')
+          | #{req.user.firstname} #{req.user.lastname}
+        a.site-nav-list-btn-secondary(title='View your settings', href='/settings/profile', tabindex='-1')
+          span.fa.fa-gears
+      li.site-nav-list-item.site-nav-list-item-campaign.navigable-list-item
+        a.site-nav-list-btn(title='New story', data-action='open-new-post', href='/campaigns', tabindex='-1')
+          span.fa.fa-gift
+          | Campaigns
+      li.site-nav-list-item.navigable-list-item
+        a.site-nav-list-btn(title='Logout', href='/logout', tabindex='-1')
+          span.fa.fa-power-off
+          |  Logout
+
