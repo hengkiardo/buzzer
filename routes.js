@@ -9,6 +9,7 @@ var Auth = require(config.root + '/app/helper/authorization');
 var fs = require('fs');
 
 var userController = require(config.root + '/app/controllers/users');
+var campaignController = require(config.root + '/app/controllers/campaigns');
 
 Route
   .get('/login', userController.login)
@@ -36,6 +37,7 @@ Route
     { failureRedirect: '/' }), function(req, res) {
     res.redirect(req.session.returnTo || '/')
   })
+  .get('/campaigns', campaignController.index)
   .get('/', function(req, res) {
     res.render('index')
   })

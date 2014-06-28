@@ -6,51 +6,58 @@
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Twitter
     span.network-notice.text-xs.pull-left.col-sm-6
       | You cannot disconnect your Twitter account when your account is not connected to a Facebook profile.
+    .overlay
 
   .service.panel-body.b-b
     span.connected-network.fb.rounded.b.disconnected
       i.fa.fa-facebook
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Facebook
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/fb') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.fp.rounded.b
       i.fa.fa-facebook.fa-facebook-page.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Facebook Page
     span.network-notice.text-xs.pull-left.col-sm-6
       | You can only have one type of Facebook account connected at any time. Connecting a Facebook Page will unlink your Facebook account.
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/fp') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.ig.rounded.b
       i.fa.fa-instagram.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Instagram
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/ig') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.yt.rounded.b
       i.fa.fa-youtube.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left YouTube
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/yt') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.gp.rounded.b
       i.fa.fa-google-plus.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Google+
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/gp') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.lk.rounded.b
       i.fa.fa-linkedin.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Linkedin
     span.network-notice.text-xs.pull-left.col-sm-6 Klout refreshes your LinkedIn statistics once a month.
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/li') Connect
+    .overlay
 
-  .service.panel-body.b-b
+  .service.disabled.panel-body.b-b
     span.connected-network.fs.rounded.b
       i.fa.fa-foursquare.disconnected
     span.network-name.m-l-sm.text-md.m-r-md.pull-left Foursquare
     a.btn.btn-dark.lter.pull-right.connect-button(href='/oauth/fs') Connect
-
+    .overlay
 
 .clearfix

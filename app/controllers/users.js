@@ -98,11 +98,9 @@ exports.create = function (req, res, next) {
 }
 
 
-exports.settingProfile = function (req, res, next) {
-  var user = req.user
+exports.settingProfile = function (req, res) {
 
   res.render('settings/profile', {
-    title: 'Findbuzzer - Setting Profile',
-    user: user
+    title: 'Findbuzzer - Setting Profile'
   })
 }
