@@ -4,9 +4,9 @@ head(prefix="og: http://ogp.me/ns# findbuzzer: http://ogp.me/ns/apps/findbuzzer#
   meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
   meta(http-equiv="Content-Language", content="en-us")
 
-  title= pkg.name + ' - ' + title
+  title= pkg.product_name + ' - ' + pkg.name
   meta(http-equiv="Content-type", content="text/html;charset=UTF-8")
-  meta(name="keywords", content=pkg.keywords.join(","))
+  //- meta(name="keywords", content=pkg.keywords.join(","))
   meta(name="description", content=pkg.description)
 
   link(href=config.cdn_assets + "/favicon.png", rel="shortcut icon", type="image/x-icon")

@@ -1,13 +1,8 @@
 {
+  "product_name" : "Gokkon",
   "name": "buzzer",
   "version": "0.1.0",
   "description": "",
-  "keywords": [
-    "express",
-    "expressJS",
-    "express4",
-    "expressJS4"
-  ],
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
