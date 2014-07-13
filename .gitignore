@@ -25,5 +25,5 @@ build/Release
 node_modules
 .DS_Store
 
-app/models/
-app/models
+#app/models/
+#app/models

@@ -24,21 +24,20 @@ Route
   .get('/settings/profile', userController.settingProfile)
   .get('/auth/twitter', passport.authenticate('twitter'))
   .get('/auth/twitter/callback',
-    passport.authenticate('twitter',{
-    failureRedirect: '/' }), function(req, res) {
-    res.redirect(req.session.returnTo || '/')
-  })
+    passport.authenticate('twitter', { failureRedirect: '/' }),
+    function (req, res) {
+      res.redirect(req.session.returnTo || '/')
+    })
   .get('/auth/facebook',
-    passport.authenticate('facebook',
-      { scope: ['email','publish_actions', 'user_location', 'user_friends', 'publish_stream', 'publish_actions']}
+    passport.authenticate('facebook', { scope: ['email','publish_actions', 'user_location', 'user_friends', 'publish_stream', 'publish_actions']}
   ))
   .get('/auth/facebook/callback',
-    passport.authenticate('facebook',
-    { failureRedirect: '/' }), function(req, res) {
-    res.redirect(req.session.returnTo || '/')
-  })
+    passport.authenticate('facebook', { failureRedirect: '/' }),
+    function (req, res) {
+      res.redirect(req.session.returnTo || '/')
+    })
   .get('/campaigns', campaignController.index)
-  .get('/', function(req, res) {
+  .get('/', function (req, res) {
     res.render('index')
   })
 module.exports = Route

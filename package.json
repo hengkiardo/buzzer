@@ -1,5 +1,5 @@
 {
-  "product_name" : "Gokkon",
+  "product_name": "Gokkon",
   "name": "buzzer",
   "version": "0.1.0",
   "description": "",
@@ -46,6 +46,9 @@
     "request": "^2.36.0",
     "validator": "^3.16.0",
     "moment": "^2.7.0",
-    "lusca": "^1.0.1"
+    "lusca": "^1.0.1",
+    "mongoose-timestamp": "^0.2.1",
+    "mongoose-url-slugs": "0.0.9",
+    "mongoose-types": "^1.0.3"
   }
 }
